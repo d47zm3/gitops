@@ -1,0 +1,11 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    NETWORK_INTERFACE:
+      dhcp4: no
+      addresses:
+        - IP_ADDRESS/24
+      gateway4: GATEWAY_ADDRESS
+      nameservers:
+          addresses: [9.9.9.9, 1.1.1.1]
