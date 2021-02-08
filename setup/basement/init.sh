@@ -77,7 +77,7 @@ decho "installing network overlay..."
 kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
 
 wget https://docs.projectcalico.org/manifests/custom-resources.yaml
-sed -e "s/cidr:.*/cidr: ${pod_network_cidr}/g"  custom-resources.yaml
+sed -i -e "s@cidr:.*@cidr: ${pod_network_cidr}@g"  custom-resources.yaml
 kubectl apply -f custom-resources.yaml
 rm -f custom-resources.yaml
 
